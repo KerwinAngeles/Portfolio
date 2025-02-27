@@ -156,6 +156,8 @@ export default function Home() {
                     <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
+                      width={500}
+                      height={300}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
