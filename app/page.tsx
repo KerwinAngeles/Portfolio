@@ -1,101 +1,260 @@
-import Image from "next/image";
+"use client"
+
+import { Gift, MousePointer, ExternalLink, Github, Menu } from "lucide-react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { motion } from "framer-motion"
+import { Badge } from "@/components/ui/badge"
+import { useState } from "react"
+
+const projects = [
+  {
+    title: "Real State",
+    description: "A creative landing page for a real estate company",
+    image: "/realstatebg.png",
+    tags: ["React", "Tailwind", "JavaScript"],
+    link: "https://real-state-kerwin.vercel.app/",
+    github: "https://github.com/KerwinAngeles/RealState",
+  },
+  {
+    title: "Kick Sneaker",
+    description: "A creative landing page for a sneaker store",
+    image: "/nikewebsite.png",
+    tags: ["React", "Tailwind", "JavaScript"],
+    link: "https://nike-web-site-kerwin.vercel.app/",
+    github: "https://github.com/KerwinAngeles/NikeWebSite",
+  },
+  {
+    title: "Managments System",
+    description: "A landing page for a management system",
+    image: "/manage.png",
+    tags: ["React", "Tailwind", "Javascript"],
+    link: "https://management-system-kerwin.vercel.app/",
+    github: "https://github.com/KerwinAngeles/ManagementSystem",
+  },
+]
+
+const skills = [
+  {
+    category: "Frontend",
+    items: [
+      { name: "React", level: 80 },
+      { name: "JavaScript", level: 85 },
+      { name: "Next.js", level: 75 },
+      { name: "Tailwind CSS", level: 95 },
+    ],
+  },
+  {
+    category: "Design",
+    items: [
+      { name: "UI/UX", level: 85 },
+      { name: "Figma", level: 80 },
+      { name: "Animation", level: 75 },
+      { name: "Responsive", level: 95 },
+    ],
+  },
+  {
+    category: "Backend",
+    items: [
+      { name: "Node.js", level: 82 },
+      { name: "C#", level: 85 },
+      { name: "SQL-Server", level: 80 },
+      { name: "REST APIs", level: 90 },
+    ],
+  },
+]
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isOpen, setIsOpen] = useState(false)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  const navLinks = [
+    { href: "#projects", label: "PROJECTS" },
+    { href: "#contact", label: "CONTACT" },
+  ]
+
+  return (
+    <div className="min-h-screen">
+      <header className="p-4 md:p-6 fixed w-full top-0 z-50 bg-gradient-to-r from-[#84fab0]/80 to-[#8fd3f4]/80 backdrop-blur-sm">
+        <nav className="max-w-7xl mx-auto flex justify-between items-center">
+          <Link href="/" className="text-2xl font-bold text-primary">
+            KA
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-8">
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="nav-link">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Navigation */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <nav className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-xl font-medium hover:text-primary transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </nav>
+      </header>
+
+      <main className="relative pt-20">
+        <section className="min-h-[80vh] flex flex-col items-center justify-center text-center p-4">
+          <h1 className="space-y-4">
+            <div className="text-xl md:text-2xl text-primary mb-4">CREATIVE DEVELOPER</div>
+            <div className="hero-title relative font-black">
+              <MousePointer className="absolute -top-12 right-0 text-primary animate-bounce" />
+              <Gift className="absolute -right-12 top-0 text-primary animate-pulse" />
+              KERWIN ANGELES
+            </div>
+          </h1>
+          <p className="mt-6 text-lg text-muted-foreground">I BUILD CREATIVE, ACCESSIBLE WEBSITES</p>
+        </section>
+
+        <section id="projects" className="py-20">
+          <div className="max-w-7xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-16 space-y-4"
+            >
+              <h2 className="section-title">Featured Projects</h2>
+              <p className="text-center text-lg text-primary/80 max-w-2xl mx-auto">
+                A selection of my favorite works that showcase my skills and passion for web development
+              </p>
+            </motion.div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="group relative overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm border border-white/20 hover:border-primary/30 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <h3 className="font-bold text-xl">{project.title}</h3>
+                    <p className="text-muted-foreground">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, index) => (
+                        <Badge key={index} variant="secondary">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <div className="flex gap-4 pt-4">
+                      <Link
+                        href={project.link}
+                        className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4" /> Live Demo
+                      </Link>
+                      <Link
+                        href={project.github}
+                        className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                      >
+                        <Github className="w-4 h-4" /> Source Code
+                      </Link>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" className="py-20">
+          <div className="max-w-7xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-16 space-y-4"
+            >
+              <h2 className="section-title">Skills & Expertise</h2>
+              <p className="text-center text-lg text-primary/80 max-w-2xl mx-auto">
+                Technologies and tools I've mastered throughout my journey
+              </p>
+            </motion.div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {skills.map((category, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="p-8 rounded-xl bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20"
+                >
+                  <h3 className="text-2xl font-bold mb-8 text-primary">{category.category}</h3>
+                  <div className="space-y-6">
+                    {category.items.map((skill, index) => (
+                      <div key={index} className="space-y-2">
+                        <div className="flex justify-between text-sm font-medium">
+                          <span>{skill.name}</span>
+                          <span className="text-primary/80">{skill.level}%</span>
+                        </div>
+                        <div className="h-2 bg-primary/10 rounded-full overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level}%` }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="h-full bg-primary/60 rounded-full"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-20">
+          <div className="max-w-7xl mx-auto px-4 text-center">
+            <h2 className="section-title mb-8">Let's Work Together</h2>
+            <p className="text-lg text-primary/80 mb-8 max-w-2xl mx-auto">
+              I'm currently available for freelance projects and collaborations
+            </p>
+            <Button size="lg" className="bg-primary/80 hover:bg-primary/90 text-white backdrop-blur-sm">
+              Get in Touch
+            </Button>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="py-12">
+        <div className="max-w-7xl mx-auto px-4 text-center text-sm text-primary/80">
+          <p>© 2024. All rights reserved.</p>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
+
