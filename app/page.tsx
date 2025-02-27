@@ -202,7 +202,7 @@ export default function Home() {
             >
               <h2 className="section-title">Skills & Expertise</h2>
               <p className="text-center text-lg text-primary/80 max-w-2xl mx-auto">
-                Technologies and tools I've mastered throughout my journey
+                Technologies and tools Ive mastered throughout my journey
               </p>
             </motion.div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -241,9 +241,9 @@ export default function Home() {
 
         <section id="contact" className="py-20">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <h2 className="section-title mb-8">Let's Work Together</h2>
+            <h2 className="section-title mb-8">Lets Work Together</h2>
             <p className="text-lg text-primary/80 mb-8 max-w-2xl mx-auto">
-              I'm currently available for freelance projects and collaborations
+              Im currently available for freelance projects and collaborations
             </p>
             <Button size="lg" className="bg-primary/80 hover:bg-primary/90 text-white backdrop-blur-sm">
               Get in Touch
