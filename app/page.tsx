@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
+import Image from "next/image";
 
 const projects = [
   {
@@ -152,7 +153,7 @@ export default function Home() {
                   className="group relative overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm border border-white/20 hover:border-primary/30 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   <div className="aspect-video overflow-hidden">
-                    <img
+                    <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
