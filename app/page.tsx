@@ -19,6 +19,14 @@ const projects = [
     github: "https://github.com/KerwinAngeles/RealState",
   },
   {
+    title: "Angelestudio",
+    description: "A agency website for a web development and design, custom social media marketing",
+    image: "/agencia.png",
+    tags: ["Astro", "Tailwind", "Javascript"],
+    link: "https://angelestudio.vercel.app/",
+    github: "",
+  },
+  {
     title: "Kick Sneaker",
     description: "A creative landing page for a sneaker store",
     image: "/nikewebsite.png",
@@ -34,6 +42,7 @@ const projects = [
     link: "https://management-system-kerwin.vercel.app/",
     github: "https://github.com/KerwinAngeles/ManagementSystem",
   },
+ 
 ]
 
 const skills = [
@@ -77,9 +86,9 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <header className="p-4 md:p-6 fixed w-full top-0 z-50 bg-gradient-to-r from-[#84fab0]/80 to-[#8fd3f4]/80 backdrop-blur-sm">
-        <nav className="max-w-7xl mx-auto flex justify-between items-center">
+        <nav className="max-w-7xl mx-auto flex justify-between gap-5 items-center">
           <Link href="/" className="text-2xl font-bold text-primary">
-            KA
+            <img src="/KLogo.svg" alt="" />
           </Link>
 
           {/* Desktop Navigation */}

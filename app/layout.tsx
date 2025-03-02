@@ -25,6 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/KLogo.svg" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
       <body className={`${spaceGrotesk.variable} ${outfit.variable}`}>{children}</body>
     </html>
   )
