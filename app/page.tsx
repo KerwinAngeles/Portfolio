@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
 import Image from "next/image";
+import { ContactForm } from "@/components/contact-form"
 
 const projects = [
   {
@@ -41,6 +42,15 @@ const projects = [
     tags: ["React", "Tailwind", "Javascript"],
     link: "https://management-system-kerwin.vercel.app/",
     github: "https://github.com/KerwinAngeles/ManagementSystem",
+  },
+
+  {
+    title: "Write Easy",
+    description: "Write Easy is an web modern app that use Ia intelligence to help you write better.",
+    image: "/writeEasy.png",
+    tags: ["React", "Tailwind", "Node", "Express"],
+    link: "https://escribe-facil.vercel.app/",
+    github: "https://github.com/KerwinAngeles/EscribeFacil",
   },
  
 ]
@@ -254,9 +264,7 @@ export default function Home() {
             <p className="text-lg text-primary/80 mb-8 max-w-2xl mx-auto">
               Im currently available for freelance projects and collaborations
             </p>
-            <Button size="lg" className="bg-primary/80 hover:bg-primary/90 text-white backdrop-blur-sm">
-              Get in Touch
-            </Button>
+            <ContactForm />
           </div>
         </section>
       </main>
