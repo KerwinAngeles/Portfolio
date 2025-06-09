@@ -78,7 +78,7 @@ export function ContactForm() {
           <DialogHeader>
             <DialogTitle>Contact Me</DialogTitle>
             <DialogDescription>
-              Fill out the form below and I'll get back to you as soon as possible.
+              Fill out the form below and I will get back to you as soon as possible.
             </DialogDescription>
           </DialogHeader>
           <motion.form 
