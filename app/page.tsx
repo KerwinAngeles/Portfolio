@@ -52,6 +52,14 @@ const projects = [
     link: "https://escribe-facil.vercel.app/",
     github: "https://github.com/KerwinAngeles/EscribeFacil",
   },
+   {
+    title: "AngelesMediart",
+    description: "A desing and develop web agency.",
+    image: "/angelesmediart.png",
+    tags: ["React", "Tailwind"],
+    link: "https://angelesmediart.com/",
+    github: "https://github.com/KerwinAngeles/AngelesMediart",
+  },
  
 ]
 
