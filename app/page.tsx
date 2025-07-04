@@ -9,36 +9,29 @@ import { motion } from "framer-motion"
 
 const projects = [
   {
-    title: "Real State",
-    description: "A creative landing page for a real estate company",
-    image: "/realstatebg.png",
+    title: "LevelUp",
+    description: "LevelUp helps you complete missions, earn rewards, and grow every day.",
+    image: "/levelup.png",
+    tags: ["React", "Tailwind", "Nodejs", "Express"],
+    link: "",
+    github: "https://github.com/KerwinAngeles/levelup",
+  },
+  {
+    title: "Write Easy",
+    description: "A modern web app that uses AI to help you improve your texts in Spanish and English",
+    image: "/escribefacil.png",
     tags: ["React", "Tailwind", "JavaScript"],
-    link: "https://real-state-kerwin.vercel.app/",
-    github: "https://github.com/KerwinAngeles/RealState",
+    link: "https://escribe-facil.vercel.app/",
+    github: "https://github.com/KerwinAngeles/EscribeFacil",
   },
-  {
-    title: "Angelestudio",
-    description: "A agency website for a web development and design, custom social media marketing",
-    image: "/agencia.png",
-    tags: ["Astro", "Tailwind", "Javascript"],
-    link: "https://angelestudio.vercel.app/",
-    github: "",
-  },
-  {
-    title: "Kick Sneaker",
-    description: "A creative landing page for a sneaker store",
-    image: "/nikewebsite.png",
+
+   {
+    title: "Angeles Mediart",
+    description: "Angeles Mediart is a creative web development agency that builds modern, impactful websites for brands that want to stand out.",
+    image: "/angelesmediart.png",
     tags: ["React", "Tailwind", "JavaScript"],
-    link: "https://nike-web-site-kerwin.vercel.app/",
-    github: "https://github.com/KerwinAngeles/NikeWebSite",
-  },
-  {
-    title: "Managments System",
-    description: "A landing page for a management system",
-    image: "/manage.png",
-    tags: ["React", "Tailwind", "Javascript"],
-    link: "https://management-system-kerwin.vercel.app/",
-    github: "https://github.com/KerwinAngeles/ManagementSystem",
+    link: "https://angelesmediart.com/",
+    github: "https://github.com/KerwinAngeles/AngelesMediart",
   },
 ]
 
@@ -46,28 +39,28 @@ const skills = [
   {
     category: "Frontend",
     items: [
-      { name: "React", level: 80 },
-      { name: "JavaScript", level: 85 },
-      { name: "Next.js", level: 75 },
-      { name: "Tailwind CSS", level: 95 },
+      { name: "React", level: 75 },
+      { name: "JavaScript", level: 80 },
+      { name: "Next.js", level: 50 },
+      { name: "Tailwind CSS", level: 80 },
     ],
   },
   {
     category: "Design",
     items: [
-      { name: "UI/UX", level: 85 },
+      { name: "UI/UX", level: 80 },
       { name: "Figma", level: 80 },
-      { name: "Animation", level: 75 },
-      { name: "Responsive", level: 95 },
+      { name: "Animation", level: 70 },
+      { name: "Responsive", level: 85 },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js", level: 82 },
-      { name: "C#", level: 85 },
-      { name: "SQL-Server", level: 80 },
-      { name: "REST APIs", level: 90 },
+      { name: "Node.js", level: 75 },
+      { name: "C#", level: 75 },
+      { name: "SQL-Server", level: 65 },
+      { name: "REST APIs", level: 80 },
     ],
   },
 ]
