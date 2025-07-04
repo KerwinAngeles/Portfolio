@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&display=swap');
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -13,10 +15,12 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground scroll-smooth;
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    background-attachment: fixed;
-    font-family: var(--font-outfit);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to top, #831843 0%, #3730a3 100%);
+    color: #fff;
   }
 }
 
@@ -44,5 +48,43 @@
     content: "";
     @apply block w-24 h-1 bg-primary mx-auto mt-4 rounded-full;
   }
+
+  .creative-title {
+    font-family: 'Unbounded', cursive, sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 24px #fff3, 0 0 8px #a5b4fc, 0 0 32px #f472b6;
+    background: linear-gradient(90deg, #f472b6 20%, #a5b4fc 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2.5s ease-in-out infinite alternate;
+  }
+
+  @media (min-width: 768px) {
+    .creative-title {
+      font-size: 5rem;
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0 2px 24px #fff3, 0 0 8px #a5b4fc, 0 0 32px #f472b6;
+    }
+    100% {
+      text-shadow: 0 4px 32px #fff6, 0 0 24px #a5b4fc, 0 0 48px #f472b6;
+    }
+  }
+}
+
+img, .next-image, .project-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Eliminar estilos de nav si existen */
+nav, .navbar, .navigation {
+  display: none !important;
 }
 
