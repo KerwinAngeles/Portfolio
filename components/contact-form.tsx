@@ -58,7 +58,7 @@ export function ContactForm() {
         >
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-center text-white drop-shadow mb-2">
-              Let's Start a Project
+              Let&apos;s Start a Project
             </DialogTitle>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-6 mt-6 px-6 pb-6">
