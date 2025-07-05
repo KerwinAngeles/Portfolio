@@ -9,8 +9,8 @@ import { motion } from "framer-motion"
 
 const projects = [
   {
-    title: "LevelUp",
-    description: "LevelUp helps you complete missions, earn rewards, and grow every day.",
+    title: "Level Up",
+    description: "Level Up helps you complete missions, earn rewards, and grow every day.",
     image: "/level.png",
     tags: ["React", "Tailwind", "Nodejs", "Express"],
     link: "",
