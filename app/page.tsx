@@ -11,7 +11,7 @@ const projects = [
   {
     title: "LevelUp",
     description: "LevelUp helps you complete missions, earn rewards, and grow every day.",
-    image: "/levelup.png",
+    image: "/level.png",
     tags: ["React", "Tailwind", "Nodejs", "Express"],
     link: "",
     github: "https://github.com/KerwinAngeles/levelup",
@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Write Easy",
     description: "A modern web app that uses AI to help you improve your texts in Spanish and English",
-    image: "/escribefacil.png",
+    image: "/writeeasy.png",
     tags: ["React", "Tailwind", "JavaScript"],
     link: "https://escribe-facil.vercel.app/",
     github: "https://github.com/KerwinAngeles/EscribeFacil",
@@ -28,7 +28,7 @@ const projects = [
    {
     title: "Angeles Mediart",
     description: "Angeles Mediart is a creative web development agency that builds modern, impactful websites for brands that want to stand out.",
-    image: "/angelesmediart.png",
+    image: "/angelesmedia.png",
     tags: ["React", "Tailwind", "JavaScript"],
     link: "https://angelesmediart.com/",
     github: "https://github.com/KerwinAngeles/AngelesMediart",
