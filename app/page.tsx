@@ -13,7 +13,7 @@ const projects = [
     description: "Level Up helps you complete missions, earn rewards, and grow every day.",
     image: "/level.png",
     tags: ["React", "Tailwind", "Nodejs", "Express"],
-    link: "",
+    link: "https://levelup-ke.vercel.app/",
     github: "https://github.com/KerwinAngeles/levelup",
   },
   {
